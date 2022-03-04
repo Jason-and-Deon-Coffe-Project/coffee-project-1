@@ -30,12 +30,16 @@ function updateCoffees(e) {
     var selectedRoast = roastSelection.value;                           //   Var that holds user input
     var filteredCoffees = [];                                           //   New array var as our output
 
-    coffees.forEach(function(coffee) {                             //   Loop through original array
-        if (coffee.roast === selectedRoast) {                           //   Only selecting objects that user requests
-            filteredCoffees.push(coffee);                               //   Pushes those objects into our new output
-                                                                        // array
-        }
-    });
+    if (selectedRoast === "all roasts"){
+        coffeeContainer.innerHTML = renderCoffees(coffees)
+    } else {
+        coffees.forEach(function (coffee) {                             //   Loop through original array
+            if (coffee.roast === selectedRoast) {                           //   Only selecting objects that user requests
+                filteredCoffees.push(coffee);                               //   Pushes those objects into our new output
+                // array
+            }
+        })
+    };
     coffeeContainer.innerHTML = renderCoffees(filteredCoffees);                   //   Running renderCoffees function with new
 }                                                                       // output array to get the string of HTML tags
                                                                         // with object info.  Then it is placed into
