@@ -29,8 +29,8 @@ function updateCoffees(e) {
     let filteredCoffees = [];
 
 
-    if(selectedRoast === ' '){
-        coffeeContainer.innerHTML = ' ';
+    if(selectedRoast === 'none'){
+        coffeeContainer.innerHTML = '';
     } else if(selectedRoast === 'all roasts'){
         coffeeContainer.innerHTML = renderCoffees(coffees);
     } else {
@@ -97,7 +97,7 @@ let roastSelection = document.querySelector('#roast-selection');
 let nameSelection = document.querySelector("#CoffeeName");
 let newCoffeeSubmit = document.querySelector('#new-coffee-button');
 newCoffeeSubmit.addEventListener('click', createCoffee);
-coffeeContainer.innerHTML = renderCoffees(coffees);
+// coffeeContainer.innerHTML = renderCoffees(coffees);
 
 
 roastSelection.addEventListener('change', updateCoffees);
