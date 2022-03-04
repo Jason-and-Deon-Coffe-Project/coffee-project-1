@@ -40,6 +40,7 @@ hr {
 
 .coffee-name {
     font-size: x-large;
+    padding-left: 1rem;
     /*background: greenyellow;*/
 }
 
@@ -53,7 +54,7 @@ hr {
 
 /* FORM COMPONENTS*/
 .form-container {
-    /*background: pink;*/
+    background-color: rgba(128, 128, 128, 0.51);
 
 }
 

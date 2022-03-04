@@ -29,7 +29,9 @@ function updateCoffees(e) {
     let filteredCoffees = [];
 
 
-    if(selectedRoast === 'all roasts'){
+    if(selectedRoast === ' '){
+        coffeeContainer.innerHTML = ' ';
+    } else if(selectedRoast === 'all roasts'){
         coffeeContainer.innerHTML = renderCoffees(coffees);
     } else {
         coffees.forEach(function (coffee){
@@ -93,17 +95,14 @@ let coffeeContainer = document.querySelector('#coffees-container');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 let nameSelection = document.querySelector("#CoffeeName");
-var newCoffeeSubmit = document.querySelector('#new-coffee-button');
+let newCoffeeSubmit = document.querySelector('#new-coffee-button');
 newCoffeeSubmit.addEventListener('click', createCoffee);
 coffeeContainer.innerHTML = renderCoffees(coffees);
 
-<<<<<<< HEAD
-// submitButton.addEventListener('click', updateCoffees);
+
 roastSelection.addEventListener('change', updateCoffees);
 
-=======
 roastSelection.addEventListener('change', updateCoffees);
 nameSelection.addEventListener("keyup", nameSearch);
->>>>>>> a56aa102ce3df2ff41171416014c19bdb1f6f2df
 
 console.log(coffees.length);
