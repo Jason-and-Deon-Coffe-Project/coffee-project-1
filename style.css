@@ -5,6 +5,9 @@ header {
 hr {
     border-bottom: #6b6a6a;
 }
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 
 .coffee {
     margin: 30px;
@@ -12,6 +15,7 @@ hr {
     align-items: baseline;
     /*background: lightcoral;*/
     min-width: 40%;
+    background-color: #ffffff99;
 }
 
 .roast {
@@ -91,13 +95,17 @@ img {
     width: 20em;
 }
 
-video {
-    height: 100%;
+#pour {
+    z-index: -1;
+    height: 200%;
     position: absolute;
     top: 0;
     width: 100%;
     object-fit: cover;
+    opacity: 50;
 }
+
+
 
 
 
