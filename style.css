@@ -1,3 +1,7 @@
+* {
+    box-sizing: inherit;
+}
+
 header {
     text-align: center;
 }
@@ -13,26 +17,6 @@ h3 {
 hr {
     border-bottom: #6b6a6a;
 }
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
-.coffee {
-    margin: 30px;
-    display: flex;
-    align-items: center;
-    /*background: lightcoral;*/
-    min-width: 40%;
-    background-color: #ffffff99;
-    border-radius: 50%;
-    /*align-text: center;*/
-}
-
-.roast {
-    margin: 16px;
-}
-
-
 
 .main-container {
     display: flex;
@@ -40,31 +24,52 @@ hr {
     width: 100vw;
 }
 
-.coffee-name {
-    font-size: x-large;
-    padding-left: 1rem;
-    /*background: greenyellow;*/
-}
-
+/**
+    Coffee Container
+ */
 #coffees-container {
     /*background: magenta;*/
+    margin-right: 400px;
     min-width: 50%;
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
+}
+.coffee {
+    margin: 30px;
+    width: 250px;
+    height: 50px;
+    background-color: #ffffff99;
+    /*border-radius: 50%;*/
+
+    display: flex;
+    align-items: baseline;
+}
+.coffee-name {
+    font-size: x-large;
+    padding-left: 1rem;
+}
+.roast {
+    margin: 16px;
 }
 
 
-/* FORM COMPONENTS*/
+/*
+    FORM COMPONENTS
+*/
 .form-container {
     background-color: rgba(128, 128, 128, 0.51);
-    margin-left: 10em;
+    /*margin-left: 10em;*/
 }
 
 form {
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
-    min-width: 50%;
+
+    position: absolute;
+    top: 50px;
+    right: 150px;
 }
 
 label {
@@ -84,15 +89,6 @@ input {
     padding: .5rem;
     margin-bottom: 1rem;
     /*box-shadow: 0 0 5px rgb(255, 255, 255);*/
-    border: 1px solid rgb(0, 0, 0);
-}
-
-/*input:focus {*/
-/*    box-shadow: 3px 0px 0px 0px  #1b77b9 ;*/
-/*}*/
-
-input[type=text]:focus, textarea:focus, input[type=text]:hover, textarea:hover {
-    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
     border: 1px solid rgb(0, 0, 0);
 }
 
