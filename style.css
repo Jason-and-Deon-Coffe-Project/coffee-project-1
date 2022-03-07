@@ -44,6 +44,7 @@ hr {
 
     display: flex;
     align-items: baseline;
+    border-radius: 4px;
 }
 .coffee-name {
     font-size: x-large;
