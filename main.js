@@ -54,11 +54,13 @@ function nameSearch() {
     })
 }
 function createCoffee(e) {
-    e.preventDefault();
+    if (e !== undefined) {
+        e.preventDefault();
+    }
     // don't submit the form, we just want to update the data
-    var newCoffeeName = document.querySelector('#new-coffee-name').value;
-    var newCoffeeRoast = document.querySelector('#new-coffee-roast').value;
-    var newCoffee = {
+    let newCoffeeName = document.querySelector('#new-coffee-name').value;
+    let newCoffeeRoast = document.querySelector('#new-coffee-roast').value;
+    let newCoffee = {
         id: coffees.length + 1,
         name: newCoffeeName,
         roast: newCoffeeRoast
@@ -91,18 +93,20 @@ let coffees = [
 ];
 
 
+
+
 let coffeeContainer = document.querySelector('#coffees-container');
-let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 let nameSelection = document.querySelector("#CoffeeName");
 let newCoffeeSubmit = document.querySelector('#new-coffee-button');
 newCoffeeSubmit.addEventListener('click', createCoffee);
+
+
+
+
+
 // coffeeContainer.innerHTML = renderCoffees(coffees);
-
-
 roastSelection.addEventListener('change', updateCoffees);
 
 roastSelection.addEventListener('change', updateCoffees);
 nameSelection.addEventListener("keyup", nameSearch);
-
-console.log(coffees.length);
