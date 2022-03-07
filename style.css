@@ -28,7 +28,6 @@ hr {
     Coffee Container
  */
 #coffees-container {
-    /*background: magenta;*/
     margin-right: 400px;
     min-width: 50%;
     display: flex;
@@ -59,11 +58,15 @@ hr {
     FORM COMPONENTS
 */
 .form-container {
-    background-color: rgba(128, 128, 128, 0.51);
+    /*background-color: rgb(61, 58, 58);*/
     /*margin-left: 10em;*/
 }
 
 form {
+    /*background-color: rgb(61, 58, 58);*/
+    background-color: rgba(61, 58, 58, 0.53);
+    padding: 25px;
+
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
@@ -113,17 +116,6 @@ img {
     object-fit: cover;
     opacity: 50;
 }
-
-
-
-/*@media screen and (max-width: 700px) {*/
-/*    body {*/
-/*        background: blue;*/
-/*    }*/
-/*    div {*/
-/*        flex-basis: 33.333%;*/
-/*    }*/
-/*}*/
 
 
 

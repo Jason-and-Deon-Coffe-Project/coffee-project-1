@@ -19,22 +19,21 @@ function renderCoffees(coffees) {
     return html;
 }
 
-
 // Filter Function
 function updateCoffees(e) {
-    if (e !== undefined) {
+    if (e !== undefined) {                                          //   Prevents form from being sent to server
         e.preventDefault();
     }
-    let selectedRoast = roastSelection.value;
-    let filteredCoffees = [];
+    let selectedRoast = roastSelection.value;                       //   Gets user input
+    let filteredCoffees = [];                                       //   Creates output array
 
 
-    if(selectedRoast === 'none'){
+    if(selectedRoast === 'none'){                                   //   Clears coffee-container so video is ez seen
         coffeeContainer.innerHTML = '';
-    } else if(selectedRoast === 'all roasts'){
+    } else if(selectedRoast === 'all roasts'){                      //   Shows all the coffee list
         coffeeContainer.innerHTML = renderCoffees(coffees);
     } else {
-        coffees.forEach(function (coffee){
+        coffees.forEach(function (coffee){                      //   Filters according to user's selection
             if (coffee.roast === selectedRoast) {
                 filteredCoffees.push(coffee)
             }
@@ -42,7 +41,7 @@ function updateCoffees(e) {
         });
     }
 }
-function nameSearch() {
+function nameSearch() {                                             //   Much of the same as updateCoffees fun
     let selectedName = nameSelection.value.toUpperCase();
     let filteredCoffees = [];
 
@@ -53,7 +52,7 @@ function nameSearch() {
         coffeeContainer.innerHTML = renderCoffees(filteredCoffees);
     })
 }
-function createCoffee(e) {
+function createCoffee(e) {                                          //   Adds coffee obj to the array of obj
     if (e !== undefined) {
         e.preventDefault();
     }
@@ -68,10 +67,6 @@ function createCoffee(e) {
     coffees.push(newCoffee);
     updateCoffees();
 }
-// function createItem() {
-//     localStorage.setItem(roast, name);
-// }
-// createItem()
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -94,19 +89,19 @@ let coffees = [
 
 
 
-
+// Create Vars from HTML elements and id
 let coffeeContainer = document.querySelector('#coffees-container');
 let roastSelection = document.querySelector('#roast-selection');
 let nameSelection = document.querySelector("#CoffeeName");
 let newCoffeeSubmit = document.querySelector('#new-coffee-button');
+
+
+// Create add event listener
 newCoffeeSubmit.addEventListener('click', createCoffee);
-
-
-
-
-
-// coffeeContainer.innerHTML = renderCoffees(coffees);
-roastSelection.addEventListener('change', updateCoffees);
-
 roastSelection.addEventListener('change', updateCoffees);
 nameSelection.addEventListener("keyup", nameSearch);
+
+
+
+// coffeeContainer.innerHTML = renderCoffees(coffees);                  //   <-- This removed so we don't start with
+                                                                        // list
